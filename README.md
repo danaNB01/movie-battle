@@ -1,6 +1,6 @@
 # 🎬 Movie Battle
 
-Movie Battle is a web application that allows users to compare two movies and see which one "wins" based on various data like ratings, and box office numbers.
+Movie Battle is a responsive web application that allows users to compare two movies and see which one "wins" based on various data like ratings, and box office numbers.
 
 ## 🚀 Features
 
