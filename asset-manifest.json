@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/movie-battle/static/css/main.e93b4080.css",
+    "main.js": "/movie-battle/static/js/main.ac31d919.js",
+    "index.html": "/movie-battle/index.html",
+    "main.e93b4080.css.map": "/movie-battle/static/css/main.e93b4080.css.map",
+    "main.ac31d919.js.map": "/movie-battle/static/js/main.ac31d919.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e93b4080.css",
+    "static/js/main.ac31d919.js"
+  ]
+}
