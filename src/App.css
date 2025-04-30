@@ -1,38 +1,227 @@
-.App {
-  text-align: center;
+.app-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    row-gap: 4rem;
+    justify-items: center;
+    margin-top: 20px;
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* ------------------ */
+.form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    max-width: 700px;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input {
+    border: none;
+    border-bottom: 1px solid #A7A7A7;
+    padding-bottom: 5px;
+    font-size: 20px;
+    background-color: #e8e8e8;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+    grid-column: span 2;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 300;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 100%;
+    background-color: #F9E55F;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+button:hover {
+    filter: brightness(1.03);
+    transform: scale(0.99);
+}
+/* ------------------ */
+.results {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 300px;
+    gap: 3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 140px;
+    transition: all 0.8s ease;
+    border: 1px solid #000;
+    padding: 1.5rem;
+    overflow: hidden;
 }
+
+.bar .content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.bar img {
+    height: 250px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+}
+
+.bar img:hover {
+    transform: rotate(2deg) scale(1.02);
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info p {
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.info p:hover{
+    transform: scale(1.02);
+
+}
+
+.info .title {
+    font-size: 25px;
+    font-weight: 300;
+}
+.info .year {
+    font-size: 23px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.info .rating {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.info .office {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.info span {
+    text-decoration: underline;
+}
+
+/* Left bar (starts from left) */
+.left-bar {
+    background: #F9E55F;
+    margin-left: 0;
+    margin-right: auto;
+    width: 50%;
+    justify-content: flex-start;
+}
+
+/* Right bar (starts from right) */
+.right-bar {
+    background: #F9E55F;
+    margin-right: 0;
+    margin-left: auto;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+/* When first movie wins, left bar to center */
+.results.winner-first .left-bar {
+    width: 100%;
+}
+
+.results.winner-first .left-bar .content img {
+    filter: grayscale(0%);
+}
+
+.results.winner-first .left-bar .content .info .title {
+    font-weight: 400;
+}
+
+.results.winner-first .right-bar {
+    width: 50%;
+}
+
+/* When second movie wins, right bar to center */
+.results.winner-second .right-bar {
+    width: 100%;
+}
+
+.results.winner-second .right-bar .content img {
+    filter: grayscale(0%);
+}
+
+.results.winner-second .right-bar .content .info .title {
+    font-weight: 400;
+}
+
+.results.winner-second .left-bar {
+    width: 50%;
+}
+
+/* tablet view */
+@media (max-width: 768px) {
+    .bar img {
+        height: 180px;
+    }
+
+    button{
+        font-size: 16px;
+    }
+
+    input{
+        font-size: 16px;
+    }
+
+    .info .title {
+        font-size: 16px;
+    }
+    .info .year {
+        font-size: 15px;
+    }
+
+    .info .rating {
+        font-size: 14px;
+    }
+
+    .info .office {
+        font-size: 14px;
+    }
+
+
+}
+
+/* mobile view */
+@media (max-width: 450px) {
+    .bar {
+        min-height: 120px;
+        padding: 1rem;
+    }
+
+    .bar img {
+        height: 100px;
+    }
+
+}
+
+
